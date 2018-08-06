@@ -1,0 +1,18 @@
+{
+    "global":
+    {
+        "population": 3000,
+        "grow_rate_per_day": 5
+    },
+    "stock":
+    {
+        "flour": 1000,
+        "wine": 700
+    },
+    "production":
+    {
+    },
+    "consumtion":
+    {
+    }
+}
