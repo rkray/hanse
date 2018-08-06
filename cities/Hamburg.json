@@ -2,17 +2,21 @@
     "global":
     {
         "population": 3000,
-        "grow_rate_per_day": 5
+        "grow_rate_per_day":1.0005
     },
     "stock":
     {
-        "flour": 1000,
-        "wine": 700
+        "grain":1000,
+        "wine": 700,
+        "wool":1000
     },
     "production":
     {
+         "grain":0.001,
+         "wine":0.0001,
+         "wool":0.0003
     },
-    "consumtion":
+    "consumption":
     {
     }
 }

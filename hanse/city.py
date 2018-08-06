@@ -11,7 +11,7 @@ import json
 print("Load city Class")
 
 """
-this function returs a list with all city objects which are defind in the
+this function returs a list with all city objects which are defined in the
 city directory on the top level
 """
 def get_city_list():
@@ -31,7 +31,7 @@ class City:
             self.grow_rate_per_day=data['global']['grow_rate_per_day']
             self.stock=data['stock']
             self.production=data['production']
-            self.consumtion=data['consumtion']
+            self.consumption=data['consumption']
 
     """
     This function returns a string representation of a city
@@ -47,11 +47,14 @@ class City:
         return(out)
 
     def update(self):
-        print("Update CIty "+self.name)
+        print("Update City "+self.name)
         # ToDo
         #  Einwohnerberechung
+        self.population=self.population*self.grow_rate_per_day
         #  Ereignisse
         #  Rohstoffproduktion
+        for product in self.production.keys():
+            self.stock[product]=self.stock[product]+self.population*self.production[product]
         #  Rohstoffverbrauch
         #  neue Preise
 
