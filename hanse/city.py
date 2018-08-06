@@ -47,7 +47,7 @@ class City:
         return(out)
 
     def update(self):
-        print "Update CIty "+self.name
+        print("Update CIty "+self.name)
         # ToDo
         #  Einwohnerberechung
         #  Ereignisse
