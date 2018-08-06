@@ -13,3 +13,8 @@ cities=get_city_list()
 
 for city in cities:
     print(city)
+
+# MAINLOOP
+#  City update
+#  Ship update
+#  User-Interface

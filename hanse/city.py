@@ -32,7 +32,7 @@ class City:
             self.stock=data['stock']
             self.production=data['production']
             self.consumtion=data['consumtion']
-        
+
     """
     This function returns a string representation of a city
     """
@@ -46,6 +46,14 @@ class City:
         
         return(out)
 
+    def update(self):
+        print "Update CIty "+self.name
+        # ToDo
+        #  Einwohnerberechung
+        #  Ereignisse
+        #  Rohstoffproduktion
+        #  Rohstoffverbrauch
+        #  neue Preise
 
 if __name__ == "__main__":
     print("run city class as script")
