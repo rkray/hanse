@@ -12,11 +12,20 @@
     },
     "production":
     {
-         "grain":0.001,
-         "wine":0.0001,
-         "wool":0.0003
+         "grain":0.011,
+         "wine":0.0022,
+         "wool":0.0013
     },
     "consumption":
     {
+     "grain":0.01,
+     "wine":0.002,
+     "wool":0.0011
+    },
+    "price_factor":
+    {
+     "grain":0.5,
+     "wine":4,
+     "wool":2
     }
 }

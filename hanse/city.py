@@ -32,6 +32,16 @@ class City:
             self.stock=data['stock']
             self.production=data['production']
             self.consumption=data['consumption']
+            self.price_factor=data['price_factor']
+            self.price={}
+            self.price_update()
+            
+            
+    def price_update(self):
+        for product in self.stock.keys():
+            self.price[product]=self.population/self.stock[product]*self.price_factor[product]
+        
+            
 
     """
     This function returns a string representation of a city
@@ -41,7 +51,7 @@ class City:
         out+=" Dweller: %i\n" % self.population
         out+=" Market:\n"
         for product in self.stock:
-            out+="  %10s: %10i\n" % (product,self.stock[product])
+            out+="  %10s: %10i %10.2f Gulden\n" % (product,self.stock[product],self.price[product])
         
         
         return(out)
@@ -56,7 +66,15 @@ class City:
         for product in self.production.keys():
             self.stock[product]=self.stock[product]+self.population*self.production[product]
         #  Rohstoffverbrauch
+        for product in self.production.keys():
+            self.stock[product]=self.stock[product]-self.population*self.consumption[product]
         #  neue Preise
+        self.price_update()
+
+        
+            
+            
+        
 
 if __name__ == "__main__":
     print("run city class as script")
