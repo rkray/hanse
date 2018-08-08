@@ -7,7 +7,10 @@ Created on Sat Aug  4 22:12:56 2018
 from datetime import date, timedelta
 from hanse.city import get_city_list
 
-print("Start Hanse Game")
+print("╔══════════════════╗")
+print("║ Start Hanse Game ║")
+print("╚══════════════════╝")
+
 today=date(1500,1,1)
 
 cities=get_city_list()
@@ -18,17 +21,16 @@ cities=get_city_list()
 #  User-Interface
 
 def menu():
-    out="Options: \n"
-    out+="Next Day (n) \n"
-    out+="Trade (t) \n"
-    out+="Give Up (q) \n"
+    out= "┌──────────────┬───────────┬─────────────┐\n"
+    out+="│ Next Day (n) │ Trade (t) │ Give Up (q) │\n"
+    out+="└──────────────┴───────────┴─────────────┘"
     return(out)
 
 while True: 
     for city in cities:
         print(city)
-    print(menu()) 
-    user_input = input(str(today) + ' What do you want to do today?')
+    print(menu())
+    user_input = input("[%s] What do you want to do today?"%(str(today)))
     if user_input=="n":
         for city in cities:
             city.update()

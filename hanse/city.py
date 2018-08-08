@@ -35,13 +35,16 @@ class City:
             self.price_factor=data['price_factor']
             self.price={}
             self.price_update()
-            
-            
+
+
+    """
+    This function calculates the pice in dependency to the population and the
+    stock in the city
+    """
     def price_update(self):
         for product in self.stock.keys():
             self.price[product]=self.population/self.stock[product]*self.price_factor[product]
-        
-            
+
 
     """
     This function returns a string representation of a city
@@ -51,17 +54,22 @@ class City:
         out+=" Dweller: %i\n" % self.population
         out+=" Market:\n"
         for product in self.stock:
-            out+="  %10s: %10i %10.2f Gulden\n" % (product,self.stock[product],self.price[product])
-        
-        
+            out+="  %6s: %6i %6.2f Gulden\n" % (
+                product,
+                self.stock[product],
+                self.price[product]
+            )
         return(out)
 
+    """
+    The following function should be used to update the city on daily base
+    """
     def update(self):
         print("Update City "+self.name)
-        # ToDo
         #  Einwohnerberechung
         self.population=self.population*self.grow_rate_per_day
-        #  Ereignisse
+        #  Ereignisse (TODO)
+        
         #  Rohstoffproduktion
         for product in self.production.keys():
             self.stock[product]=self.stock[product]+self.population*self.production[product]
@@ -71,10 +79,6 @@ class City:
         #  neue Preise
         self.price_update()
 
-        
-            
-            
-        
 
 if __name__ == "__main__":
     print("run city class as script")

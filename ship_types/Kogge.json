@@ -1,0 +1,6 @@
+{
+	"capacity": 150,
+    "crew": 30,
+    "max_velocity": 4.75,
+    "max_hitpoints": 250
+}
